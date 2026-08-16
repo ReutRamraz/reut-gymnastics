@@ -330,12 +330,26 @@
     .schedule-info-row {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
       background: #F8FAFC;
       padding: 12px 16px;
       border-radius: 12px;
       font-weight: 700;
     }
+    
+    /* Start date highlight */
+    .start-date-highlight {
+      background: #E0F2FE;
+      color: var(--navy);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-align: center;
+      margin-bottom: 16px;
+      border: 1px solid #BAE6FD;
+    }
+
     .time-slot-box {
       background: #F0F9FF;
       border-radius: 14px;
@@ -693,7 +707,7 @@
       <div class="options-grid">
         <div class="option-card">
           <h3>1. אימונים בקבוצות קטנות</h3>
-          <p>בקבוצה של <strong>עד 5 ילדים</strong> (עם עוזרת מדריכה) המאפשרים אינטראקציה חברתית ולמידה משותפת בסביבה מבוקרת ותומכת.</p>
+          <p>אימונים בקבוצה של <strong>עד 5 ילדים</strong> (בהדרכת רעות ועוזרת מדריכה) המאפשרים אינטרקציה חברתית ולמידה משותפת בסביבה מהנה, מקדמת מבוקרת ותומכת.</p>
         </div>
         <div class="option-card">
           <h3>2. אימונים פרטניים</h3>
@@ -713,6 +727,11 @@
           <div class="schedule-info-row">
             <span>📍 מתנ"ס רמות בגין, חיפה</span>
             <span>📅 יום שלישי</span>
+          </div>
+
+          <!-- Highlight: Start date -->
+          <div class="start-date-highlight">
+            🗓️ החל מחודש אוקטובר
           </div>
 
           <div class="time-slot-box">
