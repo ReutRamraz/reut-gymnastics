@@ -152,6 +152,56 @@
       box-shadow: var(--shadow);
     }
 
+    /* Accordion / Collapsible Points */
+    .accordion-group {
+      margin: 20px 0 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .accordion-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .accordion-item[open] {
+      border-color: var(--primary);
+      box-shadow: 0 4px 15px rgba(25, 149, 173, 0.08);
+    }
+    .accordion-header {
+      padding: 14px 18px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .accordion-header::-webkit-details-marker {
+      display: none;
+    }
+    .accordion-header .arrow {
+      font-size: 0.9rem;
+      color: var(--primary);
+      transition: transform 0.25s ease;
+    }
+    .accordion-item[open] .accordion-header .arrow {
+      transform: rotate(180deg);
+    }
+    .accordion-content {
+      padding: 0 18px 15px;
+      font-size: 1.05rem;
+      color: #475569;
+      line-height: 1.6;
+      border-top: 1px solid #F1F5F9;
+      padding-top: 10px;
+    }
+
     /* Social Banner Box */
     .social-banner {
       background: #E8F5F8;
@@ -565,8 +615,51 @@
         <div class="content-side">
           <h2>למה התעמלות מותאמת משנה הכל?</h2>
           <p>
-            התעמלות מותאמת לילדים עם אוטיזם מפתחת כישורים מוטוריים, מחזקת ביטחון עצמי ומשפרת את תחושת הגוף בחלל. האימונים בנויים על עקרונות של חוויה חיובית והנאה, תוך יצירת סביבה בטוחה ותומכת. הילדים מתקדמים בקצב שלהם, חווים הצלחות ומגלים את היכולות הגופניות שלהם בדרך מהנה ומעצימה.
+            התעמלות מותאמת מאפשרת לילדים עם אוטיזם להנות ולחוות הצלחה דרך הגוף והתנועה, בסביבה מכילה ובטוחה:
           </p>
+
+          <!-- Accordion / Collapsible Menu -->
+          <div class="accordion-group">
+            <details class="accordion-item">
+              <summary class="accordion-header">
+                <span>✅ פיתוח מוטוריקה וקואורדינציה</span>
+                <span class="arrow">▼</span>
+              </summary>
+              <div class="accordion-content">
+                חיזוק הגוף, ויסות תנועתי ושיפור תחושת הגוף במרחב.
+              </div>
+            </details>
+
+            <details class="accordion-item">
+              <summary class="accordion-header">
+                <span>✅ חיזוק הביטחון ותחושת המסוגלות</span>
+                <span class="arrow">▼</span>
+              </summary>
+              <div class="accordion-content">
+                חוויות של הצלחה שמגלות לילד את העוצמות והיכולות שלו.
+              </div>
+            </details>
+
+            <details class="accordion-item">
+              <summary class="accordion-header">
+                <span>✅ התקדמות בקצב אישי</span>
+                <span class="arrow">▼</span>
+              </summary>
+              <div class="accordion-content">
+                תרגול מדויק המותאם לצרכים הייחודיים של כל ילד וילדה.
+              </div>
+            </details>
+
+            <details class="accordion-item">
+              <summary class="accordion-header">
+                <span>✅ מרחב מהנה ובטוח</span>
+                <span class="arrow">▼</span>
+              </summary>
+              <div class="accordion-content">
+                שילוב בין עבודה מקצועית ומבוססת ידע לבין חוויית משחק והנאה.
+              </div>
+            </details>
+          </div>
 
           <!-- Social Links Banner -->
           <div class="social-banner">
@@ -592,7 +685,7 @@
   <section id="classes" class="bg-light">
     <div class="container">
       <div class="center-title">
-        <h2>אימונים בקבוצות קטנות ופרטניים - התאמה אישית לכל ילד/ה</h2>
+        <h2>אימונים בקבוצות קטנות ואימונים פרטניים - התאמה אישית לכל ילד וילדה</h2>
         <p>אני מאמינה שצריך להתאים את האימונים לילד/ה ולא את הילד/ה לאימונים.</p>
       </div>
 
