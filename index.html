@@ -3,40 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>חוגי התעמלות קרקע ומכשירים לילדים</title>
+  <title>רעות התעמלות | חוג התעמלות מיוחדת לילדים עם אוטיזם</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Rubik:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #3B82F6;
-      --primary-dark: #1D4ED8;
-      --secondary: #F43F5E;
-      --secondary-dark: #E11D48;
-      --accent: #FEF08A;
-      --dark: #1E293B;
-      --light: #F8FAFC;
+      --primary: #1995AD;
+      --primary-dark: #13778c;
+      --secondary: #A1D6E2;
+      --accent: #F1F1F2;
+      --navy: #0F4C81;
+      --dark: #1A2B3C;
+      --text: #334155;
+      --bg-cream: #FDFBF7;
       --white: #FFFFFF;
-      --gray: #64748B;
-      --gray-light: #E2E8F0;
-      --whatsapp: #25D366;
-      --whatsapp-dark: #1EBE5D;
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-      --radius: 16px;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Assistant', sans-serif;
+      font-family: 'Rubik', 'Assistant', sans-serif;
     }
 
     body {
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-      overflow-x: hidden;
+      background-color: var(--white);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     .container {
@@ -45,225 +41,331 @@
       padding: 0 20px;
     }
 
-    /* Header */
+    /* Header & Navigation */
     header {
       background: var(--white);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    .nav-container {
+    .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
+      padding: 14px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
+    .logo-area {
+      font-size: 1.4rem;
+      font-weight: 900;
       color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
     }
-    .logo span {
-      color: var(--secondary);
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(244, 63, 94, 0.08) 100%), var(--white);
-      padding: 70px 0 60px;
+      background: linear-gradient(rgba(15, 76, 129, 0.7), rgba(25, 149, 173, 0.75)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1600&auto=format&fit=crop') center/cover;
+      color: var(--white);
       text-align: center;
+      padding: 110px 20px 100px;
+    }
+    .hero-tag {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      opacity: 0.95;
     }
     .hero h1 {
-      font-size: 2.7rem;
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 30px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Section Utilities */
+    section {
+      padding: 70px 0;
+    }
+    .bg-light {
+      background-color: var(--bg-cream);
+    }
+
+    /* Two Column Layouts */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .content-side h2 {
+      font-size: 2.3rem;
       font-weight: 800;
       color: var(--dark);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       line-height: 1.25;
     }
-    .hero h1 span {
-      color: var(--primary);
+    .content-side p {
+      font-size: 1.15rem;
+      color: var(--text);
+      margin-bottom: 18px;
     }
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--gray);
-      max-width: 650px;
-      margin: 0 auto 30px;
-    }
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 28px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background-color: var(--secondary);
-      color: var(--white);
-      box-shadow: 0 6px 18px rgba(244, 63, 94, 0.35);
-    }
-    .btn-primary:hover {
-      background-color: var(--secondary-dark);
-      transform: translateY(-2px);
-    }
-    .btn-wa {
-      background-color: var(--whatsapp);
-      color: var(--white);
-      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
-    }
-    .btn-wa:hover {
-      background-color: var(--whatsapp-dark);
-      transform: translateY(-2px);
+    .img-side img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    /* Sections */
-    section {
-      padding: 60px 0;
+    /* Social Banner Box */
+    .social-banner {
+      background: #E8F5F8;
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-top: 25px;
+      border-right: 5px solid var(--primary);
     }
-    .section-title {
+    .social-banner p {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .social-icons-wrapper {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .social-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .btn-instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    .btn-facebook {
+      background-color: #1877F2;
+    }
+
+    /* Options Section */
+    .center-title {
       text-align: center;
-      margin-bottom: 45px;
+      max-width: 800px;
+      margin: 0 auto 50px;
     }
-    .section-title h2 {
-      font-size: 2.1rem;
+    .center-title h2 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .center-title p {
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .option-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 35px 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid #E2E8F0;
+      position: relative;
+    }
+    .option-card h3 {
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+    .option-card p {
+      font-size: 1.1rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .options-note {
+      text-align: center;
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 1.15rem;
+      margin-top: 20px;
+    }
+
+    /* Schedule Cards Grid */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      margin-top: 40px;
+    }
+    .schedule-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 35px 30px;
+      box-shadow: var(--shadow);
+      border: 2px solid #E0F2FE;
+    }
+    .schedule-card.group-card {
+      border-color: #BAE6FD;
+    }
+    .card-top {
+      text-align: center;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 2px dashed #E2E8F0;
+    }
+    .card-top h3 {
+      font-size: 1.8rem;
+      color: var(--primary-dark);
+      font-weight: 900;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .schedule-info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      background: #F8FAFC;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+    .time-slot-box {
+      background: #F0F9FF;
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .time-slot-box .class-name {
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--dark);
     }
-    .section-title p {
-      color: var(--gray);
-      font-size: 1.1rem;
-      margin-top: 6px;
+    .time-slot-box .class-time {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      direction: ltr;
     }
-
-    /* Benefits Grid */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-    }
-    .benefit-card {
-      background: var(--white);
-      padding: 28px 20px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      transition: transform 0.3s ease;
-      border-top: 4px solid var(--primary);
-    }
-    .benefit-card:hover {
-      transform: translateY(-4px);
-    }
-    .benefit-icon {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
-    }
-    .benefit-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-      color: var(--dark);
-    }
-    .benefit-card p {
-      color: var(--gray);
-      font-size: 0.95rem;
-    }
-
-    /* Classes */
-    .classes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 25px;
-    }
-    .class-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid var(--gray-light);
-    }
-    .class-header {
-      background: var(--primary);
-      color: var(--white);
-      padding: 20px;
-      text-align: center;
-    }
-    .class-header.accent {
-      background: var(--secondary);
-    }
-    .class-body {
-      padding: 24px;
-      flex-grow: 1;
-    }
-    .class-body ul {
+    .private-info-list {
       list-style: none;
-      margin-top: 12px;
+      margin-top: 20px;
     }
-    .class-body ul li {
-      padding: 7px 0;
-      border-bottom: 1px solid #f1f5f9;
-      color: var(--gray);
-      font-size: 0.95rem;
-    }
-    .class-body ul li::before {
-      content: "✓ ";
-      color: var(--primary);
-      font-weight: bold;
-      margin-left: 6px;
-    }
-
-    /* About */
-    .about-box {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 35px;
-      box-shadow: var(--shadow);
-    }
-    .about-box h3 {
-      font-size: 1.7rem;
-      margin-bottom: 14px;
-      color: var(--primary);
-    }
-    .about-box p {
-      color: var(--dark);
+    .private-info-list li {
+      padding: 12px 16px;
+      background: #F8FAFC;
+      border-radius: 10px;
       margin-bottom: 12px;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    /* Form Section */
-    .form-wrapper {
-      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-      color: var(--white);
-      border-radius: var(--radius);
-      padding: 45px 30px;
-      box-shadow: var(--shadow);
-      max-width: 650px;
+    /* Inspiration Banner */
+    .inspiration-banner {
+      background: linear-gradient(135deg, #0F4C81 0%, #1995AD 100%);
+      color: white;
+      text-align: center;
+      padding: 55px 25px;
+    }
+    .inspiration-banner h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.4;
+      max-width: 850px;
       margin: 0 auto;
     }
-    .form-wrapper h2 {
-      text-align: center;
-      margin-bottom: 8px;
-      font-size: 2rem;
+
+    /* Contact / Form Section */
+    .contact-section {
+      padding: 70px 0;
     }
-    .form-wrapper p {
-      text-align: center;
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      border: 1px solid #E2E8F0;
+      padding: 50px 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .contact-info h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+    .contact-info p {
+      font-size: 1.2rem;
+      color: var(--text);
       margin-bottom: 25px;
-      opacity: 0.9;
+    }
+    .phone-call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      direction: ltr;
+    }
+    .phone-call-btn:hover {
+      text-decoration: underline;
     }
     .form-group {
       margin-bottom: 18px;
@@ -271,59 +373,60 @@
     .form-group label {
       display: block;
       margin-bottom: 6px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .form-group input, .form-group select {
-      width: 100%;
-      padding: 13px 15px;
-      border-radius: 8px;
-      border: 1px solid transparent;
+      font-weight: 700;
       font-size: 1rem;
-      outline: none;
+      color: var(--dark);
     }
-    .form-group input:focus, .form-group select:focus {
-      border-color: var(--accent);
-    }
-    .form-submit-btn {
+    .form-group input {
       width: 100%;
-      background: var(--secondary);
-      color: var(--white);
-      padding: 15px;
+      padding: 14px 16px;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+    .submit-btn {
+      width: 100%;
+      background-color: var(--primary);
+      color: white;
+      padding: 16px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1.2rem;
       font-weight: 800;
       cursor: pointer;
-      transition: background 0.3s;
-      margin-top: 10px;
+      transition: background-color 0.2s, transform 0.2s;
     }
-    .form-submit-btn:hover {
-      background: var(--secondary-dark);
+    .submit-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
     }
 
-    /* Floating WhatsApp Button */
+    /* Floating WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
       left: 25px;
-      background-color: var(--whatsapp);
+      background-color: #25D366;
       color: white;
       border-radius: 50px;
-      padding: 12px 20px;
+      padding: 12px 22px;
       display: flex;
       align-items: center;
       gap: 10px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.25);
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
+      font-weight: 800;
+      font-size: 1.05rem;
       z-index: 9999;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+      transition: transform 0.2s;
     }
     .whatsapp-float:hover {
-      transform: scale(1.05);
-      background-color: var(--whatsapp-dark);
+      transform: scale(1.06);
     }
     .whatsapp-float svg {
       width: 26px;
@@ -334,192 +437,217 @@
     /* Footer */
     footer {
       background: var(--dark);
-      color: var(--white);
+      color: white;
       text-align: center;
       padding: 25px 0;
-      font-size: 0.9rem;
-      margin-top: 40px;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
+    @media (max-width: 860px) {
+      .two-col, .options-grid, .schedule-grid, .contact-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.3rem; }
+      .contact-card { padding: 30px 20px; }
       .whatsapp-float span { display: none; }
-      .whatsapp-float { padding: 14px; border-radius: 50%; bottom: 20px; left: 20px; }
-      .form-wrapper { padding: 30px 20px; }
+      .whatsapp-float { padding: 14px; border-radius: 50%; }
     }
   </style>
 </head>
 <body>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/972542110496?text=שלום,%20אשמח%20לקבל%20פרטים%20על%20חוגי%20ההתעמלות" target="_blank" class="whatsapp-float" aria-label="פנייה בוואטסאפ">
-    <svg viewBox="0 0 24 24">
-      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.769.815 2.796.815 3.182 0 5.768-2.586 5.768-5.767 0-3.18-2.586-5.766-5.768-5.766zm6.368 5.766c0 3.511-2.857 6.368-6.368 6.368-1.096 0-2.124-.282-3.023-.777l-4.223 1.107 1.127-4.119c-.569-.961-.884-2.062-.884-3.239 0-3.511 2.857-6.368 6.368-6.368 3.511 0 6.368 2.857 6.368 6.368z"/>
-    </svg>
+  <a href="https://wa.me/972542110496?text=שלום%20רעות!%0Aהגעתי%20מדף%20האינטרנט%20ואני%20מתעניינ/ת%20בחוג%20התעמלות%20מיוחדת%20לילדים%20עם%20אוטיזם." target="_blank" class="whatsapp-float" aria-label="פנייה בוואטסאפ">
+    <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.769.815 2.796.815 3.182 0 5.768-2.586 5.768-5.767 0-3.18-2.586-5.766-5.768-5.766zm6.368 5.766c0 3.511-2.857 6.368-6.368 6.368-1.096 0-2.124-.282-3.023-.777l-4.223 1.107 1.127-4.119c-.569-.961-.884-2.062-.884-3.239 0-3.511 2.857-6.368 6.368-6.368 3.511 0 6.368 2.857 6.368 6.368z"/></svg>
     <span>וואטסאפ מהיר</span>
   </a>
 
   <!-- Header -->
   <header>
-    <div class="nav-container">
-      <div class="logo">חוגי <span>התעמלות</span></div>
-      <a href="#register" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.95rem;">שיעור ניסיון</a>
+    <div class="nav-inner">
+      <a href="#" class="logo-area">רעות רמרז • התעמלות</a>
+      <ul class="nav-links">
+        <li><a href="#about">מי אני?</a></li>
+        <li><a href="#why">יתרונות ההתעמלות</a></li>
+        <li><a href="#classes">חוגים</a></li>
+        <li><a href="#schedule">מערכת אימונים</a></li>
+        <li><a href="#contact">הצטרפו אליי</a></li>
+      </ul>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>בונים ביטחון, כוח וגמישות <br><span>דרך עולם ההתעמלות</span></h1>
-      <p>חוגי התעמלות קרקע ומכשירים לילדים בליווי מקצועי, יחס אישי ודגש על חיזוק הגוף, שיפור היציבה ותחושת המסוגלות.</p>
-      <div class="hero-buttons">
-        <a href="#register" class="btn btn-primary">שריון מקום בשיעור ניסיון</a>
-        <a href="https://wa.me/972542110496?text=שלום,%20אשמח%20לפרטים%20על%20שיעור%20ניסיון" target="_blank" class="btn btn-wa">שליחת וואטסאפ 💬</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <h2>למה לבחור בחוגים שלנו?</h2>
-        <p>מעטפת מקצועית המשלבת התפתחות מוטורית, ספורטיבית ורגשית</p>
-      </div>
-
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">🤸‍♀️</div>
-          <h3>מוטוריקה ויציבה</h3>
-          <p>חיזוק חגורת הכתפיים, פיתוח שיווי משקל, קואורדינציה וגמישות התורמים לתפקוד היומיומי.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon">⭐</div>
-          <h3>ביטחון ומסוגלות</h3>
-          <p>סביבה מעצימה ומעודדת המלמדת התמדה, התגברות על פחדים והשגת יעדים אישיים.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon">🛡️</div>
-          <h3>אימון מקצועי ובטוח</h3>
-          <p>הקפדה מלאה על טכניקה מדויקת, בטיחות מקסימלית והתאמה אישית ליכולת של כל ילד/ה.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon">💖</div>
-          <h3>יחס אישי וחם</h3>
-          <p>עבודה בקבוצות קטנות המאפשרות תשומת לב מלאה, חיוך ואווירה מגבשת ומהנה.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Classes Section -->
-  <section style="background-color: #f1f5f9;">
-    <div class="container">
-      <div class="section-title">
-        <h2>הקבוצות והמסלולים שלנו</h2>
-        <p>תוכניות מותאמות לפי גיל ושלב התפתחותי</p>
-      </div>
-
-      <div class="classes-grid">
-        <div class="class-card">
-          <div class="class-header">
-            <h3>הגיל הרך (גן חובה)</h3>
-          </div>
-          <div class="class-body">
-            <p><strong>יסודות התנועה ומוטוריקה</strong></p>
-            <ul>
-              <li>משחקי תנועה ושיווי משקל</li>
-              <li>חיזוק שרירי הליבה וחגורת הכתפיים</li>
-              <li>יסודות התעמלות קרקע באווירה חווייתית</li>
-              <li>קבוצות קטנות עם יחס אישי</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="class-card">
-          <div class="class-header accent">
-            <h3>כיתות א׳–ג׳</h3>
-          </div>
-          <div class="class-body">
-            <p><strong>טכניקה, גמישות ומכשירים</strong></p>
-            <ul>
-              <li>לימוד גלגולים, עמידות ידיים וגלגלונים</li>
-              <li>עבודה על קורה, מקבילים ומזרנים</li>
-              <li>פיתוח כוח, גמישות ויציבה נכונה</li>
-              <li>חיזוק הביטחון והעצמאות בתנועה</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="class-card">
-          <div class="class-header">
-            <h3>מתקדמים / אימונים אישיים</h3>
-          </div>
-          <div class="class-body">
-            <p><strong>דיוק טכני ועבודה ממוקדת</strong></p>
-            <ul>
-              <li>לימוד אלמנטים מורכבים</li>
-              <li>תוכנית עבודה מותאמת אישית</li>
-              <li>שיפור ביצועים וחיזוק ממוקד</li>
-              <li>מתאים לילדים המעוניינים בהתקדמות אישית</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <div class="hero-tag">חוג התעמלות מיוחדת לילדים עם אוטיזם</div>
+      <h1>חוויה, הנאה ואימונים מותאמים אישית</h1>
     </div>
   </section>
 
   <!-- About Section -->
-  <section>
+  <section id="about" class="bg-light">
     <div class="container">
-      <div class="about-box">
-        <h3>קצת עליי והגישה המקצועית</h3>
-        <p>
-          ברוכים הבאים! החזון שלי הוא להעניק לכל ילדה וילד מרחב בטוח, מעצים ומקצועי שבו יוכלו לגלות את היכולות הגופניות שלהם, לפתח ביטחון עצמי וליהנות מתנועה.
-        </p>
-        <p>
-          האימונים משלבים ידע מעמיק באנטומיה, פיזיולוגיה והתפתחות מוטורית, יחד עם גישה חינוכית סבלנית וחמה. כל שיעור מתוכנן בקפידה כדי לאתגר, לחזק ולבנות יסודות ספורטיביים בריאים לחיים.
-        </p>
+      <div class="two-col">
+        <div class="content-side">
+          <h2>רעות רמרז - רעות התעמלות</h2>
+          <p>
+            אני, רעות רמרז, משלבת ניסיון ייחודי כמאמנת התעמלות מכשירים במכבי חיפה וכפיזיותרפיסטית מוסמכת.
+          </p>
+          <p>
+            הכשרתי הכפולה מאפשרת לי להתאים כל אימון לצרכים הספציפיים של הילד, תוך הבנה עמוקה של התפתחות מוטורית ויכולות פיזיות. כל ילד מקבל יחס אישי ומקצועי המותאם לקצב ההתפתחות שלו.
+          </p>
+        </div>
+        <div class="img-side">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&auto=format&fit=crop" alt="רעות התעמלות">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Form Section (Auto-sends to WhatsApp) -->
-  <section id="register">
+  <!-- Why Gymnastics + Social Media Section -->
+  <section id="why">
     <div class="container">
-      <div class="form-wrapper">
-        <h2>שריינו מקום בשיעור ניסיון</h2>
-        <p>מלאו את הפרטים וההודעה תועבר ישירות לוואטסאפ לתיאום מהיר:</p>
+      <div class="two-col">
+        <div class="img-side">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop" alt="התעמלות מותאמת לילדים">
+        </div>
+        <div class="content-side">
+          <h2>למה התעמלות מותאמת משנה הכל?</h2>
+          <p>
+            התעמלות מותאמת לילדים עם אוטיזם מפתחת כישורים מוטוריים, מחזקת ביטחון עצמי ומשפרת את תחושת הגוף בחלל.
+          </p>
+          <p>
+            האימונים בנויים על עקרונות של חוויה חיובית והנאה, תוך יצירת סביבה בטוחה ותומכת. הילדים מתקדמים בקצב שלהם, חווים הצלחות ומגלים את היכולות הגופניות שלהם בדרך מהנה ומעצימה.
+          </p>
 
-        <form id="leadForm" onsubmit="handleFormSubmit(event)">
+          <!-- Social Links Banner -->
+          <div class="social-banner">
+            <p>רוצים לגלות עוד על התעמלות לילדים עם אוטיזם? רוצים לגלות איך אני מביאה את המחקר לקליניקה? מוזמנים לעקוב אחריי:</p>
+            <div class="social-icons-wrapper">
+              <a href="https://www.instagram.com/special_gymnastics_il?igsh=M3RlOXl4eDFicTRp&igsi=M3RlOXl4eDFicTRp" target="_blank" class="social-btn btn-instagram">
+                📸 אינסטגרם
+              </a>
+              <a href="https://www.facebook.com/share/1BkrcjNoNU/?mibextid=wwXIfr" target="_blank" class="social-btn btn-facebook">
+                👍 פייסבוק
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes & Options Section -->
+  <section id="classes" class="bg-light">
+    <div class="container">
+      <div class="center-title">
+        <h2>אימונים בקבוצות קטנות ופרטניים - התאמה אישית לכל ילד/ה</h2>
+        <p>אני מאמינה שצריך להתאים את האימונים לילד/ה ולא את הילד/ה לאימונים.</p>
+      </div>
+
+      <div class="options-grid">
+        <div class="option-card">
+          <h3>1. אימונים בקבוצות קטנות</h3>
+          <p>בקבוצה של <strong>עד 5 ילדים</strong> (עם עוזרת מדריכה) המאפשרים אינטראקציה חברתית ולמידה משותפת בסביבה מבוקרת ותומכת.</p>
+        </div>
+        <div class="option-card">
+          <h3>2. אימונים פרטניים</h3>
+          <p>המספקים תשומת לב מלאה, התאמה מקסימלית והתקדמות בקצב אישי.</p>
+        </div>
+      </div>
+
+      <p class="options-note">* שני המסלולים מותאמים לילדים עם אוטיזם ומובלים על ידי רעות עם המקצועיות והרגישות הנדרשת.<br>* ניתן לשלב בין שני סוגי האימונים בהתאם להתפתחות הילד.</p>
+    </div>
+  </section>
+
+  <!-- Schedule Section -->
+  <section id="schedule">
+    <div class="container">
+      <div class="center-title">
+        <h2>מערכת האימונים</h2>
+        <p>חוויה של תנועה, הנאה והצלחה!</p>
+      </div>
+
+      <div class="schedule-grid">
+        <!-- Group Card -->
+        <div class="schedule-card group-card">
+          <div class="card-top">
+            <h3>אימונים בקבוצות קטנות</h3>
+            <span class="badge">עד 5 ילדים בקבוצה</span>
+          </div>
+
+          <div class="schedule-info-row">
+            <span>📍 מתנ"ס רמות בגין, חיפה</span>
+            <span>📅 יום שלישי</span>
+          </div>
+
+          <div class="time-slot-box">
+            <span class="class-name">🎒 כיתות ב׳–ג׳</span>
+            <span class="class-time">16:15 – 17:00</span>
+          </div>
+
+          <div class="time-slot-box">
+            <span class="class-name">🧸 גן חובה – כיתה א׳</span>
+            <span class="class-time">17:00 – 17:45</span>
+          </div>
+
+          <p style="text-align: center; color: var(--primary); font-weight: 700; margin-top: 15px;">עם חברים, בתנועה ובכיף! 💙</p>
+        </div>
+
+        <!-- Private Card -->
+        <div class="schedule-card">
+          <div class="card-top">
+            <h3>אימונים פרטניים</h3>
+            <span class="badge" style="background: var(--navy);">התאמה אישית ויחס אישי</span>
+          </div>
+
+          <ul class="private-info-list">
+            <li>📍 <strong>מתנ"ס רמות בגין</strong>, חיפה</li>
+            <li>📍 <strong>אולם ההתעמלות</strong> של מכבי חיפה</li>
+            <li>📅 <strong>בתיאום מראש</strong></li>
+          </ul>
+
+          <p style="text-align: center; color: var(--navy); font-weight: 700; margin-top: 25px;">התקדמות אישית ומדויקת לקצב של ילדכם ✨</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspiration Banner -->
+  <div class="inspiration-banner">
+    <div class="container">
+      <h2>"כל ילד/ה הם עולם ומלואו – אני כאן כדי לאפשר להם לפרוח דרך תנועה, הנאה והצלחה. בחוג התעמלות מיוחדת עם רעות כל התקדמות היא חגיגה, וכל אימון הוא צעד נוסף לעבר ביטחון ושמחה."</h2>
+    </div>
+  </div>
+
+  <!-- Contact & Lead Form Section -->
+  <section id="contact" class="contact-section bg-light">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-info">
+          <h2>הצטרפו לחוג ותנו לילד/ה שלכם מקום להנאה וחוויה מקדמת ומעשירה!</h2>
+          <p>השאירו פרטים ואחזור אליכם בהקדם לתיאום אימון היכרות.</p>
+          <div style="margin-top: 20px;">
+            <span style="font-size: 1.1rem; font-weight: 700;">או התקשרו ישירות:</span><br>
+            <a href="tel:0542110496" class="phone-call-btn">📞 054-2110496</a>
+          </div>
+        </div>
+
+        <!-- Form with Name & Phone Only -> WhatsApp -->
+        <form onsubmit="handleFormSubmit(event)">
           <div class="form-group">
-            <label for="parent-name">שם ההורה:</label>
-            <input type="text" id="parent-name" required placeholder="שם מלא של ההורה">
+            <label for="parent-name">שם מלא:</label>
+            <input type="text" id="parent-name" required placeholder="הכניסו שם מלא">
           </div>
 
           <div class="form-group">
-            <label for="phone">טלפון ליצירת קשר:</label>
-            <input type="tel" id="phone" required placeholder="050-0000000">
+            <label for="phone">מספר טלפון:</label>
+            <input type="tel" id="phone" required placeholder="054-0000000">
           </div>
 
-          <div class="form-group">
-            <label for="child-details">שם הילד/ה וגיל:</label>
-            <input type="text" id="child-details" required placeholder="למשל: דניאל, בן 6 / גן חובה">
-          </div>
-
-          <div class="form-group">
-            <label for="group-pref">קבוצה רצויה:</label>
-            <select id="group-pref">
-              <option value="הגיל הרך (גן חובה)">הגיל הרך (גן חובה)</option>
-              <option value="כיתות א׳-ג׳">כיתות א׳–ג׳</option>
-              <option value="מתקדמים / אישי">מתקדמים / אימונים אישיים</option>
-            </select>
-          </div>
-
-          <button type="submit" class="form-submit-btn">שליחת פנייה לתיאום בוואטסאפ 🚀</button>
+          <button type="submit" class="submit-btn">שליחה ותיאום היכרות 🚀</button>
         </form>
       </div>
     </div>
@@ -528,29 +656,24 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© כל הזכויות שמורות לחוגי ההתעמלות | תנועה • ביטחון • התפתחות</p>
+      <p>© כל הזכויות שמורות לרעות רמרז - רעות התעמלות | חוג התעמלות מיוחדת לילדים עם אוטיזם</p>
     </div>
   </footer>
 
   <script>
     function handleFormSubmit(e) {
       e.preventDefault();
-      
       const parentName = document.getElementById('parent-name').value;
       const phone = document.getElementById('phone').value;
-      const childDetails = document.getElementById('child-details').value;
-      const groupPref = document.getElementById('group-pref').value;
+      const trainerPhone = "972542110496";
       
-      const phoneTrainer = "972542110496";
-      
-      const message = `שלום! הגעתי מדף הנחיתה ואשמח לתאם שיעור ניסיון:
-- שם ההורה: ${parentName}
-- טלפון: ${phone}
-- שם הילד/ה וגיל: ${childDetails}
-- קבוצה מבוקשת: ${groupPref}`;
+      const message = `שלום רעות!
+הגעתי מדף האינטרנט ואני מתעניינ/ת בחוג התעמלות מיוחדת לילדים עם אוטיזם.
+- שם מלא: ${parentName}
+- טלפון: ${phone}`;
       
       const encodedMsg = encodeURIComponent(message);
-      window.open(`https://wa.me/${phoneTrainer}?text=${encodedMsg}`, '_blank');
+      window.open(`https://wa.me/${trainerPhone}?text=${encodedMsg}`, '_blank');
     }
   </script>
 
