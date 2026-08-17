@@ -29,6 +29,10 @@
       font-family: 'Rubik', 'Assistant', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--white);
       color: var(--text);
@@ -56,6 +60,7 @@
       padding: 10px 20px;
       max-width: 1100px;
       margin: 0 auto;
+      position: relative;
     }
     .logo-container {
       display: flex;
@@ -88,6 +93,18 @@
     }
     .nav-links a:hover {
       color: var(--primary);
+    }
+
+    /* Mobile Hamburger Menu Button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--dark);
+      font-size: 1.8rem;
+      line-height: 1;
     }
 
     /* Hero Section */
@@ -376,7 +393,32 @@
       color: #475569;
       line-height: 1.6;
       border-top: 1px solid #F1F5F9;
-      padding-top: 10px;
+      padding-top: 12px;
+    }
+    .accordion-content p + p {
+      margin-top: 8px;
+    }
+
+    /* PDF Research Link Button */
+    .pdf-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background-color: #F1F5F9;
+      color: var(--navy);
+      border: 1.5px solid #CBD5E1;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .pdf-link-btn:hover {
+      background-color: var(--navy);
+      color: white;
+      border-color: var(--navy);
     }
 
     /* Social Banner Box */
@@ -577,12 +619,40 @@
       font-size: 0.95rem;
     }
 
+    /* Mobile Responsive Styles */
     @media (max-width: 860px) {
       .two-col, .schedule-grid, .contact-card {
         grid-template-columns: 1fr;
         gap: 25px;
       }
-      .nav-links { display: none; }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        padding: 15px 25px 25px;
+        gap: 18px;
+        border-top: 1px solid #E2E8F0;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-links li {
+        width: 100%;
+      }
+      .nav-links a {
+        display: block;
+        padding: 8px 0;
+        font-size: 1.15rem;
+        border-bottom: 1px solid #F1F5F9;
+      }
       .hero h1 { font-size: 2.3rem; }
       .contact-card { padding: 30px 20px; }
       .whatsapp-float span { display: none; }
@@ -605,11 +675,18 @@
         <img src="logo.png" alt="לוגו רעות התעמלות" class="logo-img">
         <span class="logo-text">רעות התעמלות</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="#about">מי אני?</a></li>
-        <li><a href="#classes">אימונים ומערכת שעות</a></li>
-        <li><a href="#why">יתרונות ההתעמלות</a></li>
-        <li><a href="#contact">הצטרפו אליי</a></li>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-toggle" id="menuToggle" aria-label="תפריט ניווט" onclick="toggleMenu()">
+        ☰
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" onclick="closeMenu()">מי אני?</a></li>
+        <li><a href="#classes" onclick="closeMenu()">אימונים ומערכת שעות</a></li>
+        <li><a href="#why" onclick="closeMenu()">יתרונות ההתעמלות</a></li>
+        <li><a href="#contact" onclick="closeMenu()">הצטרפו אליי</a></li>
       </ul>
     </div>
   </header>
@@ -760,7 +837,12 @@
                 <span class="arrow">▼</span>
               </summary>
               <div class="accordion-content">
-                חוויות של הצלחה שמגלות לילד את העוצמות והיכולות שלו.
+                <p>חוויות של הצלחה שמגלות לילד את העוצמות והיכולות שלו.</p>
+                <p>ממצאי המחקר מצביעים על כך שתוכנית ההתעמלות תרמה לחיזוק תחושת הביטחון והמסוגלות של הילדים, כפי שבאה לידי ביטוי בעלייה בנכונות להתמודד עם אתגרים, בהתמדה לאחר כישלונות, בשיפור ההשתתפות הפעילה ובהתפתחות העצמאות לאורך חמשת שבועות ההתערבות. החוקרים מייחסים שינויים אלו בעיקר להתאמה אישית של הפעילויות, לאפשרות הבחירה שניתנה לילדים ולסביבה תומכת ובטוחה.</p>
+                <!-- PDF Research Article Link Button -->
+                <a href="research-study.pdf" target="_blank" class="pdf-link-btn">
+                  📄 לקריאת המחקר המלא (PDF)
+                </a>
               </div>
             </details>
 
@@ -854,6 +936,26 @@
   </footer>
 
   <script>
+    // Toggle mobile menu
+    function toggleMenu() {
+      var nav = document.getElementById('navLinks');
+      var toggleBtn = document.getElementById('menuToggle');
+      nav.classList.toggle('active');
+      if (nav.classList.contains('active')) {
+        toggleBtn.innerText = '✕';
+      } else {
+        toggleBtn.innerText = '☰';
+      }
+    }
+
+    // Close menu when clicking a navigation link
+    function closeMenu() {
+      var nav = document.getElementById('navLinks');
+      var toggleBtn = document.getElementById('menuToggle');
+      nav.classList.remove('active');
+      toggleBtn.innerText = '☰';
+    }
+
     // Handles direct email sending to reutgym@gmail.com
     function handleEmailSubmit(e) {
       e.preventDefault();
