@@ -399,26 +399,16 @@
       margin-top: 8px;
     }
 
-    /* PDF Research Link Button */
-    .pdf-link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 14px;
-      padding: 10px 20px;
-      background-color: #E8F5F8;
+    /* In-text Research Link */
+    .research-text-link {
       color: var(--navy);
-      border: 1.5px solid var(--primary);
-      border-radius: 10px;
-      text-decoration: none;
       font-weight: 800;
-      font-size: 1.05rem;
-      transition: all 0.2s ease;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
     }
-    .pdf-link-btn:hover {
-      background-color: var(--primary);
-      color: white;
-      transform: translateY(-2px);
+    .research-text-link:hover {
+      color: var(--primary);
     }
 
     /* Social Banner Box */
@@ -491,9 +481,14 @@
       border: 1px solid #E2E8F0;
       padding: 50px 40px;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1fr;
       gap: 45px;
       align-items: center;
+    }
+    @media (min-width: 861px) {
+      .contact-card {
+        grid-template-columns: 1.2fr 1fr;
+      }
     }
     .contact-info h2 {
       font-size: 2.2rem;
@@ -831,19 +826,17 @@
               </div>
             </details>
 
-            <details class="accordion-item">
+            <!-- Opened by default with in-text link on the word 'מחקר' -->
+            <details class="accordion-item" open>
               <summary class="accordion-header">
                 <span>✅ חיזוק הביטחון ותחושת המסוגלות</span>
                 <span class="arrow">▼</span>
               </summary>
               <div class="accordion-content">
                 <p>חוויות של הצלחה שמגלות לילד את העוצמות והיכולות שלו.</p>
-                <p>ממצאי המחקר מצביעים על כך שתוכנית ההתעמלות תרמה לחיזוק תחושת הביטחון והמסוגלות של הילדים, כפי שבאה לידי ביטוי בעלייה בנכונות להתמודד עם אתגרים, בהתמדה לאחר כישלונות, בשיפור ההשתתפות הפעילה ובהתפתחות העצמאות לאורך חמשת שבועות ההתערבות. החוקרים מייחסים שינויים אלו בעיקר להתאמה אישית של הפעילויות, לאפשרות הבחירה שניתנה לילדים ולסביבה תומכת ובטוחה.[cite: 1]</p>
-                
-                <!-- PDF Research Article Link Button -->
-                <a href="%E2%80%98George%E2%80%99s%20Gymnastics%20Program%E2%80%99,%20a%20Community%20Gymnastic-1930517_Brusco,N_2024.pdf" target="_blank" class="pdf-link-btn">
-                  📄 לקריאת המחקר המלא (PDF)
-                </a>
+                <p>
+                  ממצאי <a href="research-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">המחקר</a> מצביעים על כך שתוכנית ההתעמלות תרמה לחיזוק תחושת הביטחון והמסוגלות של הילדים, כפי שבאה לידי ביטוי בעלייה בנכונות להתמודד עם אתגרים, בהתמדה לאחר כישלונות, בשיפור ההשתתפות הפעילה ובהתפתחות העצמאות לאורך חמשת שבועות ההתערבות. החוקרים מייחסים שינויים אלו בעיקר להתאמה אישית של הפעילויות, לאפשרות הבחירה שניתנה לילדים ולסביבה תומכת ובטוחה.
+                </p>
               </div>
             </details>
 
