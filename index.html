@@ -195,6 +195,23 @@
       font-weight: 700;
     }
 
+    /* Why Section Header (Top of section) */
+    .section-header-top {
+      margin-bottom: 35px;
+    }
+    .section-header-top h2 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+    .section-header-top p {
+      font-size: 1.2rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     /* Unified Schedule Cards Grid */
     .schedule-grid {
       display: grid;
@@ -348,7 +365,7 @@
 
     /* Accordion / Collapsible Points */
     .accordion-group {
-      margin: 20px 0 25px;
+      margin: 0 0 25px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -812,16 +829,17 @@
   <!-- 3. Why Gymnastics Section (יתרונות ההתעמלות) -->
   <section id="why" class="bg-light">
     <div class="container">
+      <!-- Section Title & Intro (Always on top) -->
+      <div class="section-header-top">
+        <h2>למה התעמלות מותאמת משנה הכל?</h2>
+        <p>התעמלות מותאמת מאפשרת לילדים עם אוטיזם להנות ולחוות הצלחה דרך הגוף והתנועה, בסביבה מכילה ובטוחה:</p>
+      </div>
+
       <div class="two-col">
         <div class="img-side">
           <img src="why-img.png" alt="למה התעמלות מותאמת משנה הכל">
         </div>
         <div class="content-side">
-          <h2>למה התעמלות מותאמת משנה הכל?</h2>
-          <p>
-            התעמלות מותאמת מאפשרת לילדים עם אוטיזם להנות ולחוות הצלחה דרך הגוף והתנועה, בסביבה מכילה ובטוחה:
-          </p>
-
           <!-- Accordion / Collapsible Menu (All closed by default, single-open behavior via name attribute) -->
           <div class="accordion-group">
             <!-- 1. Motor & Coordination -->
