@@ -480,8 +480,10 @@
       color: var(--primary);
       text-decoration: none;
       direction: ltr;
+      transition: color 0.2s;
     }
     .phone-call-btn:hover {
+      color: var(--primary-dark);
       text-decoration: underline;
     }
     .form-group {
@@ -521,6 +523,27 @@
     .submit-btn:hover {
       background-color: var(--primary-dark);
       transform: translateY(-2px);
+    }
+    .form-status {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .form-status.success {
+      display: block;
+      background: #DCFCE7;
+      color: #166534;
+      border: 1px solid #BBF7D0;
+    }
+    .form-status.error {
+      display: block;
+      background: #FEE2E2;
+      color: #991B1B;
+      border: 1px solid #FECACA;
     }
 
     /* Floating WhatsApp */
@@ -575,10 +598,10 @@
 </head>
 <body>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/972542110496?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A8%D7%A2%D7%95%D7%AA!%0A%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%93%D7%A3%20%D7%94%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%20%D7%95%D7%90%D7%A0%D7%99%20%D7%9E%D7%AA%D7%A2%D7%A0%D7%99%D7%99%D7%A0/%D7%AA%20%D7%91%D7%97%D7%95%D7%92%20%D7%94%D7%AA%D7%A2%D7%9E%D7%9C%D7%95%D7%AA%20%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%AA%20%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D%20%D7%A2%D7%9D%20%D7%90%D7%95%D7%98%D7%99%D7%96%D7%9D." target="_blank" class="whatsapp-float" aria-label="פנייה בוואטסאפ">
+  <!-- Floating WhatsApp with Icon & Text -->
+  <a href="https://wa.me/972542110496?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A8%D7%A2%D7%95%D7%AA!%0A%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%93%D7%A3%20%D7%94%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98%20%D7%95%D7%90%D7%A0%D7%99%20%D7%9E%D7%AA%D7%A2%D7%A0%D7%99%D7%99%D7%A0/%D7%AA%20%D7%91%D7%97%D7%95%D7%92%20%D7%94%D7%AA%D7%A2%D7%9E%D7%9C%D7%95%D7%AA%20%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%AA%20%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D%20%D7%A2%D7%9D%20%D7%90%D7%95%D7%98%D7%99%D7%96%D7%9D." target="_blank" class="whatsapp-float" aria-label="לפרטים והרשמה בוואטסאפ">
     <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.769.815 2.796.815 3.182 0 5.768-2.586 5.768-5.767 0-3.18-2.586-5.766-5.768-5.766zm6.368 5.766c0 3.511-2.857 6.368-6.368 6.368-1.096 0-2.124-.282-3.023-.777l-4.223 1.107 1.127-4.119c-.569-.961-.884-2.062-.884-3.239 0-3.511 2.857-6.368 6.368-6.368 3.511 0 6.368 2.857 6.368 6.368z"/></svg>
-    <span>וואטסאפ מהיר</span>
+    <span>לפרטים והרשמה</span>
   </a>
 
   <!-- Header -->
@@ -804,23 +827,26 @@
           <p>השאירו פרטים ואחזור אליכם בהקדם לתיאום אימון היכרות.</p>
           <div style="margin-top: 20px;">
             <span style="font-size: 1.1rem; font-weight: 700;">או התקשרו ישירות:</span><br>
+            <!-- Direct phone dialing via regular dialer -->
             <a href="tel:0542110496" class="phone-call-btn">📞 054-2110496</a>
           </div>
         </div>
 
-        <!-- Form with Name & Phone Only -> WhatsApp -->
-        <form onsubmit="handleFormSubmit(event)">
+        <!-- Form submitting directly to Email via FormSubmit -->
+        <form id="leadForm" onsubmit="handleEmailSubmit(event)">
           <div class="form-group">
             <label for="parent-name">שם מלא:</label>
-            <input type="text" id="parent-name" required placeholder="הכניסו שם מלא">
+            <input type="text" id="parent-name" name="name" required placeholder="הכניסו שם מלא">
           </div>
 
           <div class="form-group">
             <label for="phone">מספר טלפון:</label>
-            <input type="tel" id="phone" required placeholder="054-0000000">
+            <input type="tel" id="phone" name="phone" required placeholder="054-0000000">
           </div>
 
-          <button type="submit" class="submit-btn">לתיאום אימון היכרות</button>
+          <button type="submit" id="submitBtn" class="submit-btn">לתיאום אימון היכרות ולפרטים נוספים</button>
+          
+          <div id="formStatus" class="form-status"></div>
         </form>
       </div>
     </div>
@@ -834,19 +860,49 @@
   </footer>
 
   <script>
-    function handleFormSubmit(e) {
+    // Handles direct email sending to reutgym@gmail.com
+    function handleEmailSubmit(e) {
       e.preventDefault();
-      var parentName = document.getElementById('parent-name').value;
+      
+      var name = document.getElementById('parent-name').value;
       var phone = document.getElementById('phone').value;
-      var trainerPhone = "972542110496";
+      var submitBtn = document.getElementById('submitBtn');
+      var statusDiv = document.getElementById('formStatus');
       
-      var message = "שלום רעות!\n" +
-        "הגעתי מדף האינטרנט ואני מתעניינ/ת בחוג התעמלות מיוחדת לילדים עם אוטיזם.\n" +
-        "- שם מלא: " + parentName + "\n" +
-        "- טלפון: " + phone;
+      submitBtn.disabled = true;
+      submitBtn.innerText = "שולח פרטים...";
+      statusDiv.className = "form-status";
+      statusDiv.innerText = "";
       
-      var encodedMsg = encodeURIComponent(message);
-      window.open("https://wa.me/" + trainerPhone + "?text=" + encodedMsg, '_blank');
+      // Send form data to reutgym@gmail.com
+      fetch("https://formsubmit.co/ajax/reutgym@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: "פנייה חדשה מאתר רעות התעמלות!",
+          "שם מלא": name,
+          "מספר טלפון": phone
+        })
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "לתיאום אימון היכרות ולפרטים נוספים";
+        statusDiv.className = "form-status success";
+        statusDiv.innerText = "✅ תודה! הפרטים נשלחו בהצלחה, רעות תחזור אליכם בהקדם.";
+        document.getElementById('leadForm').reset();
+      })
+      .catch(function(error) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "לתיאום אימון היכרות ולפרטים נוספים";
+        statusDiv.className = "form-status error";
+        statusDiv.innerText = "אירעה שגיאה בשליחה. ניתן גם לפנות בוואטסאפ או להתקשר ישירות.";
+      });
     }
   </script>
 
