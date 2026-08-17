@@ -147,7 +147,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
-      align-items: center;
+      align-items: flex-start;
     }
     .content-side h2 {
       font-size: 2.3rem;
@@ -176,6 +176,28 @@
       box-shadow: var(--shadow);
     }
 
+    /* Why Section Styling */
+    .why-text-col h2 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .why-text-col p {
+      font-size: 1.15rem;
+      color: var(--text);
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    .why-text-col img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
     /* Unified Classes & Schedule Section */
     .center-title {
       text-align: center;
@@ -193,23 +215,6 @@
       font-size: 1.25rem;
       color: var(--primary-dark);
       font-weight: 700;
-    }
-
-    /* Why Section Header (Top of section) */
-    .section-header-top {
-      margin-bottom: 35px;
-    }
-    .section-header-top h2 {
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: var(--dark);
-      margin-bottom: 14px;
-      line-height: 1.25;
-    }
-    .section-header-top p {
-      font-size: 1.2rem;
-      color: var(--text);
-      line-height: 1.6;
     }
 
     /* Unified Schedule Cards Grid */
@@ -365,10 +370,9 @@
 
     /* Accordion / Collapsible Points */
     .accordion-group {
-      margin: 0 0 25px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 14px;
     }
     .accordion-item {
       background: #FFFFFF;
@@ -382,8 +386,8 @@
       box-shadow: 0 4px 15px rgba(25, 149, 173, 0.08);
     }
     .accordion-header {
-      padding: 14px 18px;
-      font-size: 1.1rem;
+      padding: 16px 20px;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--dark);
       cursor: pointer;
@@ -397,7 +401,7 @@
       display: none;
     }
     .accordion-header .arrow {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--primary);
       transition: transform 0.25s ease;
     }
@@ -405,18 +409,18 @@
       transform: rotate(180deg);
     }
     .accordion-content {
-      padding: 0 18px 15px;
+      padding: 0 20px 18px;
       font-size: 1.05rem;
       color: #475569;
-      line-height: 1.6;
+      line-height: 1.65;
       border-top: 1px solid #F1F5F9;
-      padding-top: 12px;
+      padding-top: 14px;
     }
     .accordion-content p + p {
-      margin-top: 8px;
+      margin-top: 10px;
     }
     .accordion-content ul {
-      margin: 8px 24px 8px 0;
+      margin: 10px 24px 10px 0;
       list-style-type: disc;
     }
     .accordion-content li {
@@ -436,36 +440,41 @@
       color: var(--primary);
     }
 
-    /* Social Banner Box */
+    /* Social Banner Box - Centered at the bottom of the section */
     .social-banner {
       background: #E8F5F8;
-      border-radius: 14px;
-      padding: 24px 26px;
-      margin-top: 25px;
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 45px auto 0;
+      max-width: 820px;
       border-right: 5px solid var(--primary);
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      text-align: center;
     }
     .social-banner p {
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.18rem;
       color: var(--dark);
-      margin-bottom: 14px;
+      margin-bottom: 18px;
       line-height: 1.6;
     }
     .social-icons-wrapper {
       display: flex;
       gap: 16px;
       align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
     }
     .social-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 22px;
+      padding: 12px 26px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: white;
       transition: transform 0.2s, box-shadow 0.2s;
     }
@@ -677,6 +686,7 @@
       .contact-card { padding: 30px 20px; }
       .whatsapp-float span { display: none; }
       .whatsapp-float { padding: 14px; border-radius: 50%; }
+      .social-banner { padding: 22px 18px; margin-top: 30px; }
     }
   </style>
 </head>
@@ -829,18 +839,16 @@
   <!-- 3. Why Gymnastics Section (יתרונות ההתעמלות) -->
   <section id="why" class="bg-light">
     <div class="container">
-      <!-- Section Title & Intro (Always on top) -->
-      <div class="section-header-top">
-        <h2>למה התעמלות מותאמת משנה הכל?</h2>
-        <p>התעמלות מותאמת מאפשרת לילדים עם אוטיזם להנות ולחוות הצלחה דרך הגוף והתנועה, בסביבה מכילה ובטוחה:</p>
-      </div>
-
       <div class="two-col">
-        <div class="img-side">
+        <!-- Right Column: Heading, Text & Image -->
+        <div class="why-text-col">
+          <h2>למה התעמלות מותאמת משנה הכל?</h2>
+          <p>התעמלות מותאמת מאפשרת לילדים עם אוטיזם להנות ולחוות הצלחה דרך הגוף והתנועה, בסביבה מכילה ובטוחה:</p>
           <img src="why-img.png" alt="למה התעמלות מותאמת משנה הכל">
         </div>
+
+        <!-- Left Column: 4 Accordion Items -->
         <div class="content-side">
-          <!-- Accordion / Collapsible Menu (All closed by default, single-open behavior via name attribute) -->
           <div class="accordion-group">
             <!-- 1. Motor & Coordination -->
             <details class="accordion-item" name="why-benefits">
@@ -851,13 +859,13 @@
               <div class="accordion-content">
                 <p>חיזוק הגוף, ויסות תנועתי ושיפור תחושת הגוף במרחב.</p>
                 <p>
-                  <a href="motor-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">במחקר</a> שבדק מה קורה לאחר תוכנית התערבות בת 16 שבועות של אימוני התעמלות נמצא שהתעמלות מפעילה מגוון רחב של מערכות בגוף ומקדמת תיאום טוב יותר בין מערכת העצבים לשרירים[cite: 3].
+                  <a href="motor-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">במחקר</a> שבדק מה קורה לאחר תוכנית התערבות בת 16 שבועות של אימוני התעמלות נמצא שהתעמלות מפעילה מגוון רחב של מערכות בגוף ומקדמת תיאום טוב יותר בין מערכת העצבים לשרירים.
                 </p>
                 <p>כתוצאה מכך, בקרב ילדים עם אוטיזם, נצפה שיפור ב:</p>
                 <ul>
-                  <li>שיווי משקל[cite: 3]</li>
-                  <li>קואורדינציה מוטורית[cite: 3]</li>
-                  <li>תפקודים ניהוליים (Executive Functions)[cite: 3]</li>
+                  <li>שיווי משקל</li>
+                  <li>קואורדינציה מוטורית</li>
+                  <li>תפקודים ניהוליים (Executive Functions)</li>
                 </ul>
               </div>
             </details>
@@ -871,7 +879,7 @@
               <div class="accordion-content">
                 <p>חוויות של הצלחה שמגלות לילד את העוצמות והיכולות שלו.</p>
                 <p>
-                  ממצאי <a href="research-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">המחקר</a> מצביעים על כך שתוכנית ההתעמלות תרמה לחיזוק תחושת הביטחון והמסוגלות של הילדים, כפי שבאה לידי ביטוי בעלייה בנכונות להתמודד עם אתגרים, בהתמדה לאחר כישלונות, בשיפור ההשתתפות הפעילה ובהתפתחות העצמאות לאורך חמשת שבועות ההתערבות[cite: 1]. החוקרים מייחסים שינויים אלו בעיקר להתאמה אישית של הפעילויות, לאפשרות הבחירה שניתנה לילדים ולסביבה תומכת ובטוחה[cite: 1].
+                  ממצאי <a href="research-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">המחקר</a> מצביעים על כך שתוכנית ההתעמלות תרמה לחיזוק תחושת הביטחון והמסוגלות של הילדים, כפי שבאה לידי ביטוי בעלייה בנכונות להתמודד עם אתגרים, בהתמדה לאחר כישלונות, בשיפור ההשתתפות הפעילה ובהתפתחות העצמאות לאורך חמשת שבועות ההתערבות. החוקרים מייחסים שינויים אלו בעיקר להתאמה אישית של הפעילויות, לאפשרות הבחירה שניתנה לילדים ולסביבה תומכת ובטוחה.
                 </p>
               </div>
             </details>
@@ -885,14 +893,14 @@
               <div class="accordion-content">
                 <p><strong>שיפור משמעותי במדדי הקשב</strong></p>
                 <p>
-                  <a href="motor-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">במחקר</a> שבדק תוכנית התעמלות של 16 שבועות בקרב ילדים מיוחדים נמצא:[cite: 3]
+                  <a href="motor-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">במחקר</a> שבדק תוכנית התעמלות של 16 שבועות בקרב ילדים מיוחדים נמצא:
                 </p>
                 <ul>
-                  <li>שיפור בתפקודים ניהוליים ובקשב, הכוללים בין היתר יכולות של שליטה ובקרה התנהגותית.[cite: 3]</li>
-                  <li>שיפורים משמעותיים במדדי הזיכרון והלמידה וביכולת ומהירות העיבוד הקוגניטיבי.[cite: 3]</li>
-                  <li>שיפור משמעותי בתפקוד הסנסו-מוטורי, המעיד על יכולת טובה יותר לשלב מידע חושי עם ביצוע תנועה.[cite: 3]</li>
-                  <li>שיפור משמעותי גם בתפקודים הניהוליים (Executive Functions), הכוללים יכולות כגון תכנון, ארגון, שליטה בתגובה וויסות התנהגות.[cite: 3]</li>
-                  <li>שיפור בשמירה על ריכוז, מעקב אחר הוראות, תזמון תנועות וביצוע רצפים מוטוריים.[cite: 3]</li>
+                  <li>שיפור בתפקודים ניהוליים ובקשב, הכוללים בין היתר יכולות של שליטה ובקרה התנהגותית.</li>
+                  <li>שיפורים משמעותיים במדדי הזיכרון והלמידה וביכולת ומהירות העיבוד הקוגניטיבי.</li>
+                  <li>שיפור משמעותי בתפקוד הסנסו-מוטורי, המעיד על יכולת טובה יותר לשלב מידע חושי עם ביצוע תנועה.</li>
+                  <li>שיפור משמעותי גם בתפקודים הניהוליים (Executive Functions), הכוללים יכולות כגון תכנון, ארגון, שליטה בתגובה וויסות התנהגות.</li>
+                  <li>שיפור בשמירה על ריכוז, מעקב אחר הוראות, תזמון תנועות וביצוע רצפים מוטוריים.</li>
                 </ul>
               </div>
             </details>
@@ -904,29 +912,29 @@
                 <span class="arrow">▼</span>
               </summary>
               <div class="accordion-content">
-                <p>יש קשר בין השתתפות בפעילות גופנית לבין כישורים חברתיים טובים יותר בקרב ילדים עם אוטיזם.[cite: 4]</p>
+                <p>יש קשר בין השתתפות בפעילות גופנית לבין כישורים חברתיים טובים יותר בקרב ילדים עם אוטיזם.</p>
                 <p>
-                  <a href="social-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">במחקר</a> נמצא כי ילדים עם אוטיזם שהשתתפו באופן קבוע בפעילות גופנית הציגו רמה גבוהה יותר של <strong>כישורים חברתיים, לרבות יצירת ושימור קשרים, אינטראקציה קבוצתית, פתרון בעיות חברתיות ותקשורת לא-מילולית</strong>[cite: 4]. החוקרים מציעים כי פעילות גופנית מספקת סביבה טבעית לתרגול אינטראקציות עם בני גילם, לשיתוף פעולה וללמידה חברתית, ובכך עשויה לתרום להתפתחותם החברתית של ילדים עם אוטיזם.[cite: 4]
+                  <a href="social-study.pdf" target="_blank" class="research-text-link" title="פתיחת קובץ המחקר המלא ב-PDF">במחקר</a> נמצא כי ילדים עם אוטיזם שהשתתפו באופן קבוע בפעילות גופנית הציגו רמה גבוהה יותר של <strong>כישורים חברתיים, לרבות יצירת ושימור קשרים, אינטראקציה קבוצתית, פתרון בעיות חברתיות ותקשורת לא-מילולית</strong>. החוקרים מציעים כי פעילות גופנית מספקת סביבה טבעית לתרגול אינטראקציות עם בני גילם, לשיתוף פעולה וללמידה חברתית, ובכך עשויה לתרום להתפתחותם החברתית של ילדים עם אוטיזם.
                 </p>
               </div>
             </details>
           </div>
+        </div>
+      </div>
 
-          <!-- Social Links Banner -->
-          <div class="social-banner">
-            <p>
-              רוצים לדעת איך אני מביאה את המחקר לקליניקה?<br>
-              מוזמנים לעקוב אחריי באינסטגרם ובפייסבוק ולגלות את היכולות היחודיים של ההתעמלות:
-            </p>
-            <div class="social-icons-wrapper">
-              <a href="https://www.instagram.com/special_gymnastics_il?igsh=M3RlOXl4eDFicTRp&igsi=M3RlOXl4eDFicTRp" target="_blank" class="social-btn btn-instagram">
-                📸 אינסטגרם
-              </a>
-              <a href="https://www.facebook.com/share/1BkrcjNoNU/?mibextid=wwXIfr" target="_blank" class="social-btn btn-facebook">
-                👍 פייסבוק
-              </a>
-            </div>
-          </div>
+      <!-- Centered Social Banner Directly Below Both Columns -->
+      <div class="social-banner">
+        <p>
+          רוצים לדעת איך אני מביאה את המחקר לקליניקה?<br>
+          מוזמנים לעקוב אחריי באינסטגרם ובפייסבוק ולגלות את היכולות היחודיים של ההתעמלות:
+        </p>
+        <div class="social-icons-wrapper">
+          <a href="https://www.instagram.com/special_gymnastics_il?igsh=M3RlOXl4eDFicTRp&igsi=M3RlOXl4eDFicTRp" target="_blank" class="social-btn btn-instagram">
+            📸 אינסטגרם
+          </a>
+          <a href="https://www.facebook.com/share/1BkrcjNoNU/?mibextid=wwXIfr" target="_blank" class="social-btn btn-facebook">
+            👍 פייסבוק
+          </a>
         </div>
       </div>
     </div>
