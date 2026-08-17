@@ -176,7 +176,7 @@
       box-shadow: var(--shadow);
     }
 
-    /* Why Section Styling */
+    /* Why Section Styling - Updated for original aspect ratio */
     .why-text-col h2 {
       font-size: 2.4rem;
       font-weight: 900;
@@ -192,8 +192,8 @@
     }
     .why-text-col img {
       width: 100%;
-      height: 380px;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
@@ -440,7 +440,7 @@
       color: var(--primary);
     }
 
-    /* Social Banner Box - Centered at the bottom of the section */
+    /* Social Banner Box */
     .social-banner {
       background: #E8F5F8;
       border-radius: 16px;
@@ -761,7 +761,6 @@
         <p>אני מאמינה שצריך להתאים את האימונים לילד/ה ולא את הילד/ה לאימונים.</p>
       </div>
 
-      <!-- Unified Two Cards -->
       <div class="schedule-grid">
         <!-- Group Card -->
         <div class="schedule-card group-card">
@@ -922,7 +921,7 @@
         </div>
       </div>
 
-      <!-- Centered Social Banner Directly Below Both Columns -->
+      <!-- Social Banner -->
       <div class="social-banner">
         <p>
           רוצים לדעת איך אני מביאה את המחקר לקליניקה?<br>
@@ -956,7 +955,6 @@
           <p>השאירו פרטים ואחזור אליכם בהקדם לתיאום אימון היכרות.</p>
           <div style="margin-top: 20px;">
             <span style="font-size: 1.1rem; font-weight: 700;">או התקשרו ישירות:</span><br>
-            <!-- Direct phone dialing via regular dialer -->
             <a href="tel:0542110496" class="phone-call-btn">📞 054-2110496</a>
           </div>
         </div>
@@ -1023,7 +1021,6 @@
       statusDiv.className = "form-status";
       statusDiv.innerText = "";
       
-      // Send form data to reutgym@gmail.com
       fetch("https://formsubmit.co/ajax/reutgym@gmail.com", {
         method: "POST",
         headers: { 
